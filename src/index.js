@@ -4,7 +4,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import Counter from './components/Counter';
 import counter from './reducers';
-
+ 
 // This line instantiates our central Redux store.
 // The `createStore` function receives the reducer
 // that is responsible for updating the store, along
@@ -17,6 +17,15 @@ const store = createStore(counter);
 // This is needed because the store needs to know where it
 // is passing its state to. The Provider component is also
 // where the store "lives".
+function App() {
+  return (
+    <div className="App">
+      <Counter someProp="this is a normal prop" />
+    </div>
+  )
+}
+
+
 ReactDOM.render(
   <Provider store={store}>
     <Counter />
