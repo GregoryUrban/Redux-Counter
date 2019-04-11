@@ -2,20 +2,22 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { increment, decrement } from '../actions';
 
+import '../styles.css'
+
 class Counter extends Component {
     incrementIfOdd = (props) => {
         // Stretch Problem: Implement an increment function that
         // only increments if the counter value is odd
         console.log('in odd')
         
-        if (this.props.count % 2) this.props.increment();
+        if (this.props.count % 2 !== 0) this.props.increment();
 
     };
 
     incrementAsync = () => {
         // Stretch Problem: Implement an increment function that
         // increments after waiting for one second
-        
+        setTimeout(this.props.increment, 1000);
     };
 
     render() {
@@ -36,9 +38,9 @@ class Counter extends Component {
                 <button onClick={this.incrementIfOdd}>
                     Increment if odd
                 </button>
-                {/* <button onClick={this.incrementAsync}>
+                <button onClick={this.incrementAsync}>
                     Increment async
-                </button>  */}
+                </button> 
             </p>
         );
     }
