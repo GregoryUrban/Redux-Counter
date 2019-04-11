@@ -13,9 +13,18 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case INCREMENT:
     // Fill in the body of this case
+    return {
+      ...state,
+      count: state.count + 1 // is this showing in push?
+    }
     case DECREMENT:
     // Fill in the body of this case
+    return{
+      ...state,
+      count: state.count - 1
+    }
     default:
       return state;
   }
 };
+// REDUCER
