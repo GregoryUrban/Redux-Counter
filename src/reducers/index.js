@@ -15,7 +15,7 @@ export default (state = initialState, action) => {
     // Fill in the body of this case
     return {
       ...state,
-      count: state.count + 1
+      count: state.count + 1 // is this showing in push?
     }
     case DECREMENT:
     // Fill in the body of this case
